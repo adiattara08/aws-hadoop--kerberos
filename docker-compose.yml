@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  terraform:
+    image: alpine_terraform_aws
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hadoopinfra_terraform
+    volumes:
+      - .:/hadoopinfra
+    working_dir: /hadoopinfra
+    stdin_open: true
+    tty: true
+
+
+
